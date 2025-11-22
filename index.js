@@ -118,7 +118,7 @@ async function run() {
       res.json(car);
     });
 
-    // Update Cars 
+    // Updates Car 
 
     app.put("/api/cars/:id", verifyToken, async (req, res) => {
       const carId = req.params.id;
