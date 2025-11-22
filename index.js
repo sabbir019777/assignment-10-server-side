@@ -141,7 +141,7 @@ async function run() {
       res.json({ message: "Car updated successfully", car: refreshedCar });
     });
 
-    // Delete Cars
+    // Delete Car
 
     app.delete("/api/cars/:id", verifyToken, async (req, res) => {
       const carId = req.params.id;
