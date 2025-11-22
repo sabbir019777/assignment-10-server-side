@@ -85,7 +85,7 @@ async function run() {
     });
 
 
-    // Browse Cars
+    // Browse Car
 
     app.get("/api/cars/top-browse", async (req, res) => {
       const cars = await carsCollection.find({}).limit(27).toArray();
