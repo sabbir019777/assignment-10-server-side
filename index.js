@@ -92,7 +92,7 @@ async function run() {
       res.json(cars);
     });
 
-    // ✅ My Listings 
+    // ✅ My Listing
 
     app.get("/api/car/my-listings", verifyToken, async (req, res) => {
       const email = req.user.email;
