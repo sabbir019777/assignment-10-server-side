@@ -100,7 +100,7 @@ async function run() {
       res.json(cars);
     });
 
-    // Add Car
+    // Adds Car
 
     app.post("/api/cars", verifyToken, async (req, res) => {
       const car = req.body;
