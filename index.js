@@ -17,7 +17,7 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
 });
 
-// Middleware
+// Middlewares
 
 app.use(
   cors({
