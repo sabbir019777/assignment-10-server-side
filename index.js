@@ -1,4 +1,3 @@
-
 const express = require("express");
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const cors = require("cors");
@@ -21,7 +20,7 @@ admin.initializeApp({
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173",],
     credentials: true,
   })
 );
@@ -40,7 +39,7 @@ const client = new MongoClient(uri, {
   },
 });
 
-// ✅ Token Verification Middleware
+//  Token Verification Middleware
 
 async function verifyToken(req, res, next) {
   try {
@@ -66,7 +65,7 @@ async function verifyToken(req, res, next) {
 
 async function run() {
   try {
-    await client.connect();
+    // await client.connect();
     console.log("✅MongoDB Connected Successfully!");
 
     const db = client.db("car");
@@ -92,7 +91,7 @@ async function run() {
       res.json(cars);
     });
 
-    // ✅ My Listing
+    //  My Listing
 
     app.get("/api/car/my-listings", verifyToken, async (req, res) => {
       const email = req.user.email;
