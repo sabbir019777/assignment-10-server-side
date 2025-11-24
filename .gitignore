@@ -1,3 +1,4 @@
 .env
 plantkey.json
-node_models
+node_modules
+.vercel.json
