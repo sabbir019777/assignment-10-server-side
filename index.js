@@ -44,6 +44,8 @@ const client = new MongoClient(uri, {
 
 // Token Verification Middleware
 
+
+
 async function verifyToken(req, res, next) {
   try {
     const authHeader = req.headers.authorization;
@@ -63,7 +65,7 @@ async function verifyToken(req, res, next) {
   }
 }
 
-// Server function
+// Server functions 
 
 async function run() {
   try {
@@ -78,7 +80,7 @@ async function run() {
 
     app.get("/", (req, res) => res.send("Car Rental Server Running Successfully!"));
 
-    // Top Cars
+    // Top Car
 
     app.get("/api/cars/top-rated", async (req, res) => {
       const cars = await carsCollection.find({}).limit(21).toArray();
